@@ -8,6 +8,8 @@ Este proyecto expone una API REST que actúa como intermediaria entre el cliente
 
 ## Ejecutar la aplicación
 
+Es necesario tener instalado en SDK de .NET 10.0. Se puede encontrar [aquí](https://dotnet.microsoft.com/es-es/download/dotnet/10.0)
+
 Para no subir el ClientId y el ClientSecret, se han dejado vacíos, por lo que hay que añadirlos antes de ejecutar el proyecto.
 Las credenciales y configuración de Twitch se deben definir en el archivo `appsettings.json` o `appsettings.Development.json`:
 
