@@ -34,10 +34,12 @@ Para esta aplicaciñon he decidido usar .NET 10 con C# al ser la versión LTS m�
 
 Por lo general trabajo en proyectos más grandes, así que, dada la simplicidad de este caso, he aprovechado esta ocasión para usar una tecnología que simplifica bastante la creación de APIs: FastEndpoints. Viene a ser un sutituto de Minimal APIs. Con esta forma, se puede simplificar mucho la estructura del proyecto.
 
-Hablando de la estructura del proyecto. Dada la embergadura del proyecto, he optado por ordenar por las funciones de los archivo en las carpetas, como se puede ver en el diagrama de arriba.
-La otra opción que me planteé fue meter todas las cosas de un endpoint en una carpeta y sacar las cosas comunes, pero ya que estoy acostumbrado a trabajar con más división que esta, he optado por encontrar un punto medio, organizando por tipo la función del archivo (endpoints, models, services...).
+Hablando de la estructura del proyecto. Dada la embergadura del proyecto, he optado por ordenar en carpetas en base a las funciones de los archivos, como se puede ver en el diagrama de arriba.
+La otra opción que me planteé fue meter todas las cosas de un endpoint en una carpeta y sacar las cosas comunes, pero ya que estoy acostumbrado a trabajar con más división que esta, he optado por encontrar un punto medio. De esta forma el proyecto tiene una buena mantenibilidad y facilita la navegación por el mismo.
 
 Para la validación, como FastEndpoint usa FluentValidation no había que darle muchas vueltas.
+
+En el apartado de los tests he usado XUnit y Moq como era de esperar trabajando con C#. Es un clásico ya y no falla.
 
 ### Proceso seguido
 1. Pensar en las técnologías y arquitectura que podía utilizar para adaptarme a este proyecto. Basandome en lo que suelo usar para mi trabajo del día a día, donde me muevo en proyectos de gran embergadura, con muchas llamadas y conexiones entre si, decidí adaptar eso al nivel del proyecto actual. No tenía sentido llenar esto de carpetas y archivos en un proyecto con dos endpoints, por lo que busqué el punto en el que estuviese bien organizado y dicha organización fuese limpia para poder moverse facilmente por el proyecto.
@@ -47,9 +49,9 @@ Para la validación, como FastEndpoint usa FluentValidation no había que darle 
     En la petición inicial, se crearon todos los archivos necesarios para que el proyecto hiciese lo que pedía.
     El resto de peticiones fueron para ir corrigiendo algún error que salió con la petición inicial y algún otro despiste que tuve con el endpoint de obtener los streams en vivo, que al principio no me fije de que había un parámetro para filtrar por los streams en directo.
 
-    Sobre este punto quiero comentar que he quedado fascinado. No me había puesto tan en serio en el tema de programar con la IA y la verdad que he quedado fascinado. Que con un buen prompt te pueda ahorrar tanto trabajo es algo fascinante.
+    Sobre este punto quiero comentar que he quedado fascinado. No me había puesto tan en serio en el tema de programar con la IA y la verdad que he quedado asombrado. Que con un buen prompt te pueda ahorrar tanto trabajo es algo increible.
 
-3. Una vez el proyecto estaba creado, hice unas cuantas pruebas para verificar que el funcionamiento es acorde a lo que se pedía en el enunciado.
+3. Una vez el proyecto estaba creado, hice unas cuantas pruebas para verificar que funcionaba acorde a lo que se pedía en los enunciados.
 
 4. Tras probar que todo iba correctamente, pase a reestructurar el proyecto para dejarlo más limpio, eliminando objetos que realmente me eran innecesarios, como los response de la API de Twitch, que realmente podía utilizar los mismos que los de esta API.
 
